@@ -1,0 +1,16 @@
+SELECT
+    P.last_name,
+    P.first_name,
+    H.name AS house
+FROM
+    Enrollment E
+JOIN
+    Person P ON E.person = P.id
+JOIN
+    Course C ON E.course = C.id
+JOIN
+    House H ON P.house = H.id
+WHERE
+    C.name = 'Defense Against the Dark Arts'
+ORDER BY
+    H.name ASC, P.last_name ASC, P.first_name ASC;
