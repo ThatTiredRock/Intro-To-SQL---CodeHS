@@ -1,0 +1,12 @@
+SELECT
+    C.name
+FROM
+    Enrollment E
+JOIN
+    Person P ON E.person = P.id
+JOIN
+    Course C ON E.course = C.id
+WHERE
+    P.first_name = 'Neville' AND P.last_name = 'Longbottom'
+ORDER BY
+    C.name ASC;
