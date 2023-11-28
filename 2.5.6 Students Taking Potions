@@ -1,0 +1,13 @@
+SELECT
+    P.last_name,
+    P.first_name
+FROM
+    Enrollment E
+JOIN
+    Person P ON E.person = P.id
+JOIN
+    Course C ON E.course = C.id
+WHERE
+    C.name = 'Potions'
+ORDER BY
+    P.last_name ASC;
