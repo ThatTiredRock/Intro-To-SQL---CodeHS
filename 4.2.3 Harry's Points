@@ -1,0 +1,8 @@
+SELECT
+    SUM(points) AS Points
+FROM
+    HousePoint
+WHERE
+    giver = (SELECT id FROM Person WHERE first_name = 'Harry' AND last_name = 'Potter')
+    OR
+    receiver = (SELECT id FROM Person WHERE first_name = 'Harry' AND last_name = 'Potter');
