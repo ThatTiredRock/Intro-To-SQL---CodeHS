@@ -1,0 +1,15 @@
+SELECT
+    P.last_name,
+    P.first_name
+FROM
+    Enrollment E
+JOIN
+    Person P ON E.person = P.id
+JOIN
+    Course C ON E.course = C.id
+JOIN
+    House H ON P.house = H.id
+WHERE
+    C.name = 'Potions' AND H.name != 'Slytherin'
+ORDER BY
+    P.last_name ASC;
