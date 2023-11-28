@@ -1,0 +1,10 @@
+SELECT
+    C.name,
+    P.first_name,
+    P.last_name
+FROM
+    Course C
+JOIN
+    Person P ON C.professor = P.id
+ORDER BY
+    C.name ASC;
