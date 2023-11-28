@@ -1,0 +1,4 @@
+SELECT first_name, last_name
+FROM Person
+WHERE last_name LIKE 'P%'
+ORDER BY last_name ASC, first_name DESC;
