@@ -1,0 +1,8 @@
+SELECT
+    COALESCE(SUM(HP.points), 0) AS Points
+FROM
+    Person P
+LEFT JOIN
+    HousePoint HP ON P.id = HP.receiver
+WHERE
+    P.house = 3;
