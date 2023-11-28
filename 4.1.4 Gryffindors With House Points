@@ -1,0 +1,16 @@
+SELECT  
+    Student.first_name AS first_name,
+    Student.last_name AS last_name,
+    HousePoint.points AS points
+FROM
+    HousePoint
+JOIN
+    Person AS Student ON HousePoint.receiver = Student.id
+JOIN
+    House AS Gryffindor ON Student.house = Gryffindor.id
+WHERE
+    Gryffindor.name = 'Gryffindor'
+ORDER BY
+    HousePoint.points DESC,
+    Student.last_name,
+    Student.first_name;
