@@ -1,0 +1,15 @@
+SELECT
+    Giver.first_name AS first_name,
+    Giver.last_name AS last_name,
+    Receiver.first_name AS first_name,
+    Receiver.last_name AS last_name,
+    HousePoint.points,
+    ReceiverHouse.name AS House
+FROM
+    HousePoint
+JOIN
+    Person AS Giver ON HousePoint.giver = Giver.id
+JOIN
+    Person AS Receiver ON HousePoint.receiver = Receiver.id
+JOIN
+    House AS ReceiverHouse ON Receiver.house = ReceiverHouse.id;
