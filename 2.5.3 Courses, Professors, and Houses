@@ -1,0 +1,13 @@
+SELECT
+    C.name,
+    P.first_name,
+    P.last_name,
+    H.name AS house
+FROM
+    Course C
+JOIN
+    Person P ON C.professor = P.id
+JOIN
+    House H ON P.house = H.id
+ORDER BY
+    C.name ASC;
