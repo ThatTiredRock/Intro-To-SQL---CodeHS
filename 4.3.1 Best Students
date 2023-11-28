@@ -1,0 +1,13 @@
+SELECT
+    P.first_name,
+    P.last_name,
+    COALESCE(SUM(HP.points), 0) AS Points
+FROM
+    Person P
+LEFT JOIN
+    HousePoint HP ON P.id = HP.receiver
+GROUP BY
+    P.id, P.first_name, P.last_name
+ORDER BY
+    Points DESC
+LIMIT 2;
