@@ -1,0 +1,4 @@
+SELECT first_name, last_name
+FROM Person
+WHERE (house = 1 OR house = 4) -- Assuming 1 is Gryffindor and 4 is Slytherin
+  AND first_name LIKE 'R%';
