@@ -1,0 +1,5 @@
+SELECT p.first_name, p.last_name, h.name AS house
+FROM Person p
+JOIN House h ON p.house = h.id
+WHERE h.name = 'Gryffindor'
+ORDER BY p.first_name ASC;
