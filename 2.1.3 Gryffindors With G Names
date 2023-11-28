@@ -1,0 +1,4 @@
+SELECT first_name, last_name
+FROM Person
+WHERE house = 1 -- Assuming 1 corresponds to Gryffindor
+  AND last_name LIKE 'G%';
