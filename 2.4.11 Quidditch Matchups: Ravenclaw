@@ -1,0 +1,12 @@
+SELECT 
+ H1.name AS Home,
+ H2.name AS Away
+FROM 
+    House H1
+CROSS JOIN
+    House H2
+WHERE
+    H1.id <> H2.id
+    AND H2.name = 'Ravenclaw'
+ORDER BY
+    H1.name ASC;
