@@ -1,0 +1,13 @@
+SELECT
+    H.name AS House,
+    COUNT(DISTINCT C.professor) AS Professors
+FROM
+    House H
+JOIN
+    Person P ON H.id = P.house
+JOIN
+    Course C ON P.id = C.professor
+GROUP BY
+    H.name
+ORDER BY
+    House;
