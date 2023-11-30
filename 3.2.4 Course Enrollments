@@ -1,0 +1,11 @@
+SELECT
+    C.name AS Course,
+    COUNT(E.person) AS Enrollment
+FROM
+    Course C
+LEFT JOIN
+    Enrollment E ON C.id = E.course
+GROUP BY
+    C.name
+ORDER BY
+    Enrollment DESC, C.name ASC;
