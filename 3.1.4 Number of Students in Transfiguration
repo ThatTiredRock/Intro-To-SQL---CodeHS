@@ -1,0 +1,8 @@
+SELECT
+    COUNT(DISTINCT E.person) AS "Num Students"
+FROM
+    Enrollment E
+JOIN
+    Course C ON E.course = C.id
+WHERE
+    C.name = 'Transfiguration';
