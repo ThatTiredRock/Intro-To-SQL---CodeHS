@@ -1,0 +1,16 @@
+SELECT
+    C.name AS Course,
+    P.last_name AS "Professor Last Name",
+    COUNT(E.person) AS Enrollment
+FROM
+    Course C
+JOIN
+    Enrollment E ON C.id = E.course
+JOIN
+    Person P ON C.professor = P.id
+GROUP BY
+    C.id, C.name, P.last_name
+HAVING
+    COUNT(E.person) >= 18
+ORDER BY
+    Enrollment DESC;
