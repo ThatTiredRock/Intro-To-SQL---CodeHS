@@ -1,0 +1,14 @@
+SELECT
+    P.first_name,
+    P.last_name
+FROM
+    Course C
+JOIN
+    Person P ON C.professor = P.id
+LEFT JOIN
+    Enrollment E ON C.id = E.course
+GROUP BY
+    P.id, P.first_name, P.last_name
+ORDER BY
+    COUNT(E.person) ASC
+LIMIT 1;
