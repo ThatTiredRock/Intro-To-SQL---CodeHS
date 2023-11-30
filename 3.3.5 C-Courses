@@ -1,0 +1,13 @@
+SELECT
+    C.name AS Course
+FROM
+    Course C
+JOIN
+    Enrollment E ON C.id = E.course
+GROUP BY
+    C.id, C.name
+HAVING
+    COUNT(DISTINCT E.person) >= 15 
+    AND C.name LIKE 'C%'
+ORDER BY 
+    C.name;
