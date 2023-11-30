@@ -1,0 +1,13 @@
+SELECT
+    c.name AS Course,
+    COUNT(CASE WHEN p.house = 2 THEN 1 END) AS Enrollment
+FROM
+    Course c
+JOIN
+    Enrollment e ON c.id = e.course
+JOIN
+    Person p ON e.person = p.id
+GROUP BY
+    c.id, c.name
+ORDER BY
+    Enrollment DESC;
